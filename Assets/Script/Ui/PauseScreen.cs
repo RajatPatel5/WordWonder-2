@@ -34,13 +34,13 @@ public class pauseScreen : BasePopUp
     public override void ActivatePopUp()
     {
         base.ActivatePopUp();
-       // Time.timeScale = 0;
+        Time.timeScale = 0;
 
     }
     public override void DeactivatePopUp()
     {
         base.DeactivatePopUp();
-        //  Time.timeScale = 1;
+          Time.timeScale = 1;
 
     }
 }
