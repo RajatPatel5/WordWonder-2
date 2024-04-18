@@ -47,7 +47,7 @@ public class Scale_animation : MonoBehaviour
 
     public void IncreaseScale(Button button)
     {
-        Debug.Log("PlayButton");
+        Debug.Log("PlayButton");    
         Target_Scale = Default_Scale + Vector3.one * Increase_Scale;
         button.transform.localScale = Vector3.Lerp(button.transform.localScale, Target_Scale, Time.deltaTime * Speed);
 
@@ -66,14 +66,5 @@ public class Scale_animation : MonoBehaviour
         Defaultscale(HomeButton);
         Defaultscale(ResumeButton);
         Defaultscale(RetryButton);
-
-
-
-
-
-
-
     }
-
-
 }

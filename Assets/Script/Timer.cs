@@ -34,7 +34,11 @@ public class Timer : MonoBehaviour
             Timetext(0);
         }
 
-      
+        if(Time_remaining < 0)
+        {
+            UiManager.instance.OpenPopUp(GamePopUp.TimeUp);
+            Time_remaining = 60;
+       }
     }
 
     public void Timetext(float time)
