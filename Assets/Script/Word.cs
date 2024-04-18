@@ -24,9 +24,11 @@ public class Word : MonoBehaviour
     public AnimationController Rock1_Animation;
     public AnimationController Rock2_Animation;
     public AnimationController Rock3_Animation;
-    
-    
-     
+    List<Transform> GlowCellList = new List<Transform>();
+    public GameObject Glow;
+
+
+
 
     void Start()
     {
@@ -76,74 +78,83 @@ public class Word : MonoBehaviour
 
             if (firstClickedIndices.y == lastClickedIndices.y)
             {
-               
-
-                int startIndex = firstClickedIndices.x;
-                int endIndex = lastClickedIndices.x;
+                int startIndex = Mathf.Min(firstClickedIndices.x, lastClickedIndices.x);
+                int endIndex = Mathf.Max(firstClickedIndices.x, lastClickedIndices.x);
                 string verticalWord = "";
 
                 for (int rowIndex = startIndex; rowIndex <= endIndex; rowIndex++)
                 {
-                    TextMeshProUGUI cellText = cellList[rowIndex * gridColumns + firstClickedIndices.y].GetComponentInChildren<TextMeshProUGUI>();
+                    int cellIndex = rowIndex * gridColumns + firstClickedIndices.y;
+
+                    TextMeshProUGUI cellText = cellList[cellIndex].GetComponentInChildren<TextMeshProUGUI>();
                     verticalWord += cellText.text;
+
+                    // Store the references of buttons between first and last clicked buttons
+                    GlowCellList.Add(cellList[cellIndex]);
+
 
                     if (verticalWord == Rock_1.text)
                     {
-                        Debug.Log(Rock_1.text + "match");
+                        Debug.Log(Rock_1.text + " match");
                         Rock1_Animation.BrickAnimation();
+                        Onglow();
 
                     }
-                    if (verticalWord == Rock_2.text)
+                   else if (verticalWord == Rock_2.text)
                     {
-                        Debug.Log(Rock_2.text + "match");
+                        Debug.Log(Rock_2.text + " match");
                         Rock2_Animation.BrickAnimation();
-
-
+                        Onglow();
                     }
-                    if (verticalWord == Rock_3.text)
+                    else if (verticalWord == Rock_3.text)
                     {
-                        Debug.Log(Rock_3.text + "match");
+                        Debug.Log(Rock_3.text + " match");
                         Rock3_Animation.BrickAnimation();
-
-
+                        Onglow();
                     }
-
+                  
+                    
                 }
 
                 Debug.Log("Vertical Word: " + verticalWord);
             }
-            else if (firstClickedIndices.x == lastClickedIndices.x) 
+            else if (firstClickedIndices.x == lastClickedIndices.x)
             {
-                
-
-                int startIndex = firstClickedIndices.y;
-                int endIndex = lastClickedIndices.y;
+                int startIndex = Mathf.Min(firstClickedIndices.y, lastClickedIndices.y);
+                int endIndex = Mathf.Max(firstClickedIndices.y, lastClickedIndices.y);
                 string horizontalWord = "";
 
                 for (int colIndex = startIndex; colIndex <= endIndex; colIndex++)
                 {
-                    TextMeshProUGUI cellText = cellList[firstClickedIndices.x * gridColumns + colIndex].GetComponentInChildren<TextMeshProUGUI>();
+                    int cellIndex = firstClickedIndices.x * gridColumns + colIndex;
+                    TextMeshProUGUI cellText = cellList[cellIndex].GetComponentInChildren<TextMeshProUGUI>();
                     horizontalWord += cellText.text;
+
+                    // Store the references of buttons between first and last clicked buttons
+                    GlowCellList.Add(cellList[cellIndex]);
 
                     if (horizontalWord == Rock_1.text)
                     {
-                        Debug.Log(Rock_1.text + "match");
+                        Debug.Log(Rock_1.text + " match");
                         Rock1_Animation.BrickAnimation();
+                        Onglow();
+
 
                     }
-                    if (horizontalWord == Rock_2.text)
+                    else if (horizontalWord == Rock_2.text)
                     {
-                        Debug.Log(Rock_2.text + "match");
+                        Debug.Log(Rock_2.text + " match");
                         Rock2_Animation.BrickAnimation();
+                        Onglow();
 
                     }
-                    if (horizontalWord == Rock_3.text)
+                    else if (horizontalWord == Rock_3.text)
                     {
-                        Debug.Log(Rock_3.text + "match");
+                        Debug.Log(Rock_3.text + " match");
                         Rock3_Animation.BrickAnimation();
-
-
+                        Onglow();
                     }
+                   
                 }
 
                 Debug.Log("Horizontal Word: " + horizontalWord);
@@ -153,6 +164,7 @@ public class Word : MonoBehaviour
             lastClickedButton = null;
         }
     }
+
 
 
 
@@ -289,4 +301,13 @@ public class Word : MonoBehaviour
                 return "Unknown";
         }
     }
+
+    public void Onglow()
+    {
+        for (int i = 0; i < GlowCellList.Count; i++)
+        {
+            GlowCellList[i].GetComponent<Cell>().Enableglow();
+        }
+    }
+
 }
