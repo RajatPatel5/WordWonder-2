@@ -27,6 +27,7 @@ public class Word : MonoBehaviour
     List<Transform> GlowCellList = new List<Transform>();
     public GameObject Glow;
     public float Count;
+    public Timer Script_Timer;
 
 
 
@@ -65,6 +66,7 @@ public class Word : MonoBehaviour
     {
         if(Count == 3)
         {
+            Script_Timer.enabled = false;
             UiManager.instance.OpenPopUp(GamePopUp.Win);
         }
     }

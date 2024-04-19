@@ -21,9 +21,6 @@ public class AnimationController : MonoBehaviour
     {
         animator.SetTrigger("Broke");
         Debug.Log("trigger");
-       
-      
-
     }
    
 

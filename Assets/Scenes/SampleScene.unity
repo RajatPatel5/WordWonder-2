@@ -6509,7 +6509,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: c5f3a60c079f5394193d1dbee53cd830, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -7385,7 +7385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a8c4b095b4c364f8c92fe969bf9967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TotalTime: 20
+  TotalTime: 60
   Timer_text: {fileID: 737941237}
   Time_remaining: 0
   Timer_Text_animation: {fileID: 1538545202}
@@ -7748,6 +7748,7 @@ MonoBehaviour:
   Rock3_Animation: {fileID: 221023377}
   Glow: {fileID: 1644682427}
   Count: 0
+  Script_Timer: {fileID: 737941236}
 --- !u!1 &762308422
 GameObject:
   m_ObjectHideFlags: 0
@@ -18173,7 +18174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.446, y: 0.47940618}
   m_AnchorMax: {x: 0.61700004, y: 0.5497741}
-  m_AnchoredPosition: {x: -1.25, y: -87}
+  m_AnchoredPosition: {x: -1, y: 8}
   m_SizeDelta: {x: 109.92001, y: 348.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1676655777
@@ -18198,7 +18199,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 7bf092619be81c04da8f51621342299c, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

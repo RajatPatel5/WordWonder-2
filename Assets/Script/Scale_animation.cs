@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class Scale_animation : MonoBehaviour
+using UnityEngine.EventSystems;
+
+public class Scale_animation : MonoBehaviour, IPointerEnterHandler
 {
     //homeCanavs
     public Button PlayButton;
@@ -33,7 +35,7 @@ public class Scale_animation : MonoBehaviour
     }
 
 
-    public void OnMouseOver()
+  /*  public void OnMouseOver()
     { 
         IncreaseScale(PlayButton);
       //  IncreaseScale(SettingButton);
@@ -43,10 +45,10 @@ public class Scale_animation : MonoBehaviour
         IncreaseScale(RetryButton);
 
         
-    }
+    }*/
 
     public void IncreaseScale(Button button)
-    {
+    {   
         Debug.Log("PlayButton");    
         Target_Scale = Default_Scale + Vector3.one * Increase_Scale;
         button.transform.localScale = Vector3.Lerp(button.transform.localScale, Target_Scale, Time.deltaTime * Speed);
@@ -66,5 +68,16 @@ public class Scale_animation : MonoBehaviour
         Defaultscale(HomeButton);
         Defaultscale(ResumeButton);
         Defaultscale(RetryButton);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("hover");
+        IncreaseScale(PlayButton);
+        //  IncreaseScale(SettingButton);
+        IncreaseScale(PlayPauseButton);
+        IncreaseScale(HomeButton);
+        IncreaseScale(ResumeButton);
+        IncreaseScale(RetryButton);
     }
 }
