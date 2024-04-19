@@ -7,8 +7,9 @@ public class Timer : MonoBehaviour
 {
     public float TotalTime = 60f;
     public TextMeshProUGUI Timer_text;
-    private float Time_remaining;
+    public float Time_remaining;
     public Animator Timer_Text_animation;
+  
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class Timer : MonoBehaviour
             Timer_Text_animation.SetTrigger("Timer_Text");
         }
 
-        if (Time_remaining > 0)
+        if (Time_remaining > 0) 
         {
             Time_remaining -= Time.deltaTime;
             Timetext(Time_remaining);
@@ -37,9 +38,11 @@ public class Timer : MonoBehaviour
         if(Time_remaining < 0)
         {
             UiManager.instance.OpenPopUp(GamePopUp.TimeUp);
-            Time_remaining = 60;
+            
        }
     }
+
+
 
     public void Timetext(float time)
     {

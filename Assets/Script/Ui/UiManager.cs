@@ -10,6 +10,7 @@ public enum GamePopUp
 {
     Pause,
     TimeUp,
+    Win
 
 }
 

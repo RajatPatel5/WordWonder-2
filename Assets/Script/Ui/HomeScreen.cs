@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class HomeScreen : BaseScreen
 {
     [SerializeField] Button _playButton;
+    public Timer Script_Timer;
 
     private void Start()
     {
@@ -16,7 +17,7 @@ public class HomeScreen : BaseScreen
     }
     void OnPlay()
     {
-
+        Script_Timer.enabled = true;
         UiManager.instance.SwitchScreen(GameScreens.Play);
     }
 }

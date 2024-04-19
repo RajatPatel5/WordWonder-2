@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeUpScreen : BasePopUp
 {
@@ -12,7 +13,7 @@ public class TimeUpScreen : BasePopUp
 
     void OnPlay()
     {
-       UiManager.instance.ClosePopUp();
+        SceneManager.LoadSceneAsync(0);
     }
 
     public override void TackInput()

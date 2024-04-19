@@ -26,7 +26,7 @@ public class Word : MonoBehaviour
     public AnimationController Rock3_Animation;
     List<Transform> GlowCellList = new List<Transform>();
     public GameObject Glow;
-
+    public float Count;
 
 
 
@@ -59,6 +59,14 @@ public class Word : MonoBehaviour
         vertically(Rock_2.text);
         Horizontally(Rock_3.text);
         FillRemainingGrid();
+    }
+
+    private void Update()
+    {
+        if(Count == 3)
+        {
+            UiManager.instance.OpenPopUp(GamePopUp.Win);
+        }
     }
 
     void OnButtonClick(Button button)
@@ -98,6 +106,7 @@ public class Word : MonoBehaviour
                         Debug.Log(Rock_1.text + " match");
                         Rock1_Animation.BrickAnimation();
                         Onglow();
+                        Count++;
 
                     }
                    else if (verticalWord == Rock_2.text)
@@ -105,12 +114,14 @@ public class Word : MonoBehaviour
                         Debug.Log(Rock_2.text + " match");
                         Rock2_Animation.BrickAnimation();
                         Onglow();
+                        Count++;
                     }
                     else if (verticalWord == Rock_3.text)
                     {
                         Debug.Log(Rock_3.text + " match");
                         Rock3_Animation.BrickAnimation();
                         Onglow();
+                        Count++;
                     }
                   
                     
@@ -138,6 +149,8 @@ public class Word : MonoBehaviour
                         Debug.Log(Rock_1.text + " match");
                         Rock1_Animation.BrickAnimation();
                         Onglow();
+                        Count++;
+
 
 
                     }
@@ -146,6 +159,7 @@ public class Word : MonoBehaviour
                         Debug.Log(Rock_2.text + " match");
                         Rock2_Animation.BrickAnimation();
                         Onglow();
+                        Count++;
 
                     }
                     else if (horizontalWord == Rock_3.text)
@@ -153,6 +167,7 @@ public class Word : MonoBehaviour
                         Debug.Log(Rock_3.text + " match");
                         Rock3_Animation.BrickAnimation();
                         Onglow();
+                        Count++;
                     }
                    
                 }
