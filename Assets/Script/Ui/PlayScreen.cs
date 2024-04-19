@@ -5,7 +5,7 @@ public class PlayScreen : BaseScreen
 {
     [SerializeField] Button _pauseButton;
     public Timer Script_Timer;
-
+   
 
     private void Start()
     {
@@ -17,6 +17,7 @@ public class PlayScreen : BaseScreen
     {
         Script_Timer.enabled = false;
         UiManager.instance.OpenPopUp(GamePopUp.Pause);
+       
     }
     public override void ActivateScreen()
     {

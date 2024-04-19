@@ -128,6 +128,7 @@ public class Word : MonoBehaviour
                   
                     
                 }
+                GlowCellList.Clear();
 
                 Debug.Log("Vertical Word: " + verticalWord);
             }
@@ -173,6 +174,8 @@ public class Word : MonoBehaviour
                     }
                    
                 }
+
+                GlowCellList.Clear();
 
                 Debug.Log("Horizontal Word: " + horizontalWord);
             }
@@ -328,3 +331,4 @@ public class Word : MonoBehaviour
     }
 
 }
+

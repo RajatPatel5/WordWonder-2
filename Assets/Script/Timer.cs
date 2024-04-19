@@ -22,8 +22,11 @@ public class Timer : MonoBehaviour
     {
         if (Time_remaining <= 12)
         {
-            Timer_Text_animation.SetTrigger("Timer_Text");
+            Timer_Text_animation.SetBool("Timer", true);
+
         }
+
+      
 
         if (Time_remaining > 0) 
         {
@@ -38,8 +41,9 @@ public class Timer : MonoBehaviour
         if(Time_remaining < 0)
         {
             UiManager.instance.OpenPopUp(GamePopUp.TimeUp);
-            
-       }
+            Timer_Text_animation.SetBool("off", true);
+
+        }
     }
 
 
