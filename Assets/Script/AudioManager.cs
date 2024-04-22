@@ -22,10 +22,13 @@ public class AudioManager : MonoBehaviour
         inst = this;
     }
 
-   public void PlaySound(SoundName name)
+    public bool IsMusicMute => Bg_Source.mute;
+    public bool IsSoundMute => Source.mute;
+
+    public void PlaySound(SoundName name)
     {
         foreach (var item in clips)
-        {
+        { 
             if (item.name == name)
             {
                 Source.PlayOneShot(item.clip);
@@ -39,33 +42,16 @@ public class AudioManager : MonoBehaviour
     public void musicMute(bool val)
     {
         Bg_Source.mute = val;
-        MusicMute.SetActive(true);
-        MusicUnmute.SetActive(false);
 
     }
 
-    public void Music_Unmute(bool val)
-    {
-        Bg_Source.mute = val;
-        MusicMute.SetActive(false);
-        MusicUnmute.SetActive(true);
-
-    }
 
     public void SoundMute(bool val)
     {
         Source.mute = val;
-        Sound_Mute.SetActive(true);
-        Sound_Unmute.SetActive(false);
     }
 
-    public void SoundUnmute(bool val)
-    {
-        Source.mute = val;
-        Sound_Mute.SetActive(false);
-        Sound_Unmute.SetActive(true);
-    }
-
+   
    
 }
 

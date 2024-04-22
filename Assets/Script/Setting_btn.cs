@@ -1,4 +1,4 @@
-using System.Collections;using System.Collections.Generic;using UnityEngine;public class Setting_btn : MonoBehaviour{    public GameObject[] buttonsToAnimate;
+using System.Collections;using System.Collections.Generic;using UnityEngine;using UnityEngine.UI;public class Setting_btn : MonoBehaviour{    public GameObject[] buttonsToAnimate;
 
     // Animation speed
     public float animationSpeed = 0.5f;
@@ -6,8 +6,51 @@ using System.Collections;using System.Collections.Generic;using UnityEngine;
     //whether the buttons are expanded or collapsed
     private bool isExpanded = false;
     private Vector3[] originalPositions;
+    [SerializeField] Sprite muteImage;
+    [SerializeField] Sprite unmuteImage;
+    [SerializeField] Image muteSprit;
+    [SerializeField] Image SoundMuteSprite;
+    [SerializeField] Sprite SoundMuteImg;
+    [SerializeField] Sprite SoundUnmuteImg;
 
+    private void Awake()
+    {
+        buttonsToAnimate[0].GetComponent<Button>().onClick.AddListener(mute);
+        buttonsToAnimate[1].GetComponent<Button>().onClick.AddListener(Sound_mute);
+    }
+    public void mute()
+    {
+        if (AudioManager.inst.IsMusicMute)
+        {
+            AudioManager.inst.musicMute(false);
+            muteSprit.sprite = unmuteImage;
+        }
+        else
+        {
+            muteSprit.sprite = muteImage;
+            AudioManager.inst.musicMute(true); 
 
+        }
+    }
+
+    public void Sound_mute()
+    {
+        if(AudioManager.inst.IsSoundMute)
+        {
+            SoundMuteSprite.sprite = SoundUnmuteImg;
+
+            AudioManager.inst.SoundMute(false);
+
+        }
+
+        else
+        {
+            SoundMuteSprite.sprite = SoundMuteImg;
+
+            AudioManager.inst.SoundMute(true);
+
+        }
+    }
     void Start()    {
         //original positions of buttons
         originalPositions = new Vector3[buttonsToAnimate.Length];        for (int i = 0; i < buttonsToAnimate.Length; i++)        {            originalPositions[i] = buttonsToAnimate[i].transform.localPosition;        }
@@ -60,4 +103,7 @@ using System.Collections;using System.Collections.Generic;using UnityEngine;
             buttonTransform.gameObject.SetActive(false);
         }
     }
+
+
+
 }
