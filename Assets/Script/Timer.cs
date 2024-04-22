@@ -42,7 +42,7 @@ public class Timer : MonoBehaviour
         {
             UiManager.instance.OpenPopUp(GamePopUp.TimeUp);
             Timer_Text_animation.SetBool("off", true);
-
+            AudioManager.inst.BgSoundOff(true);  
         }
     }
 

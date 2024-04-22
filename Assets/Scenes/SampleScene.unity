@@ -7342,7 +7342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a8c4b095b4c364f8c92fe969bf9967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TotalTime: 15
+  TotalTime: 60
   Timer_text: {fileID: 737941237}
   Time_remaining: 0
   Timer_Text_animation: {fileID: 1538545202}

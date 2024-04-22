@@ -51,7 +51,12 @@ public class AudioManager : MonoBehaviour
         Source.mute = val;
     }
 
-   
+
+    public void BgSoundOff(bool val)
+    {
+        Bg_Source.mute = val;
+        Debug.Log("Off");
+    }
    
 }
 
