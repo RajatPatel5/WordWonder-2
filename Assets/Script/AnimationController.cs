@@ -30,6 +30,13 @@ public class AnimationController : MonoBehaviour
         Rock_text.text = null;
     }
 
-    
+    public void OnbrickDestroySound()
+    {
+        AudioManager.inst.PlaySound(SoundName.Stone_Broke);
+
+    }
+
+
+
 }
     

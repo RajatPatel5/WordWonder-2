@@ -19,7 +19,7 @@ public class Loding_Canvas : BaseScreen
 
         if(LoadingSlider.value >= 0.9f && !LodingComplete)
         {
-            Debug.Log("Call");
+            
             UiManager.instance.SwitchScreen(GameScreens.Home);
             LodingComplete = true;
         }

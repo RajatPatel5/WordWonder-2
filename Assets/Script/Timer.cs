@@ -52,7 +52,6 @@ public class Timer : MonoBehaviour
     {
         int minutes = Mathf.FloorToInt(time / 60);
         int seconds = Mathf.FloorToInt(time % 60);
-        Timer_text.text = "0"+ minutes + ":" + seconds; 
-        
+        Timer_text.text = "0" + minutes + ":" + seconds.ToString("00");
     }
 }
