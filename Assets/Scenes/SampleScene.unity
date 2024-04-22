@@ -2137,7 +2137,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.0999603, y: 0}
+  m_AnchoredPosition: {x: -2.099945, y: 0}
   m_SizeDelta: {x: 50.12, y: 2.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &142356246
@@ -20701,7 +20701,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850998583}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 519420031}
@@ -20729,6 +20729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872587ee3d56a48e186569f9c038db5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screen: 2
   LoadingSlider: {fileID: 1852090593}
 --- !u!1 &1852090591
 GameObject:
@@ -22221,10 +22222,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a752ab12aa0444a4bf12fdf05c91255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentScreen: {fileID: 2018429260}
+  _currentScreen: {fileID: 1850998588}
   _screens:
   - {fileID: 2018429260}
   - {fileID: 2118945332}
+  - {fileID: 1850998588}
   _popUps:
   - {fileID: 1735440354}
   - {fileID: 1513696701}
