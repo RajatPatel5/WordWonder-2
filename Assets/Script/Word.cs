@@ -28,12 +28,15 @@ public class Word : MonoBehaviour
     public GameObject Glow;
     public float Count;
     public Timer Script_Timer;
-    public StarAnimation StarAnimation_Script;
+    public StarAnimation StarAnimation_Script_1;
+    public StarAnimation StarAnimation_Script_2;
+    public StarAnimation StarAnimation_Script_3;
 
 
 
     void Start()
     {
+        
         filledCells = new bool[gridRows, gridColumns];
 
         wordLists.Add(new List<string>() { "aUDI", "hONDA", "bMW" });
@@ -69,7 +72,25 @@ public class Word : MonoBehaviour
         {
             Script_Timer.enabled = false;
             UiManager.instance.OpenPopUp(GamePopUp.Win);
-            StarAnimation_Script.enabled = true;
+            if(Script_Timer.Time_remaining >= 30 && Script_Timer.Time_remaining <= 59)
+            {
+                StarAnimation_Script_1.enabled = true;
+               
+                StarAnimation_Script_2.enabled = true;
+               
+                StarAnimation_Script_3.enabled = true;
+            }
+            else if (Script_Timer.Time_remaining >= 15 && Script_Timer.Time_remaining <= 29)
+            {
+                StarAnimation_Script_1.enabled = true;
+              
+                StarAnimation_Script_2.enabled = true;
+            }
+            else
+            {
+                StarAnimation_Script_1.enabled = true;
+
+            }
         }
     }
 

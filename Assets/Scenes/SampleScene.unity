@@ -4328,6 +4328,7 @@ GameObject:
   - component: {fileID: 363582439}
   - component: {fileID: 363582441}
   - component: {fileID: 363582440}
+  - component: {fileID: 363582442}
   m_Layer: 0
   m_Name: DarkStar_2
   m_TagString: Untagged
@@ -4392,6 +4393,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363582438}
   m_CullTransparentMesh: 1
+--- !u!114 &363582442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363582438}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b56a6610e234db6aa50d530eb97330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DarkStar: {fileID: 363582440}
+  GoldenStar: {fileID: 1830067286}
+  lerpSpeed: 2
 --- !u!1001 &369276302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7872,7 +7888,9 @@ MonoBehaviour:
   Glow: {fileID: 1644682427}
   Count: 0
   Script_Timer: {fileID: 737941236}
-  StarAnimation_Script: {fileID: 0}
+  StarAnimation_Script_1: {fileID: 206605237}
+  StarAnimation_Script_2: {fileID: 363582442}
+  StarAnimation_Script_3: {fileID: 2026278289}
 --- !u!1 &762308422
 GameObject:
   m_ObjectHideFlags: 0
@@ -9841,6 +9859,7 @@ GameObject:
   - component: {fileID: 1019590066}
   - component: {fileID: 1019590065}
   - component: {fileID: 1019590067}
+  - component: {fileID: 1019590068}
   m_Layer: 5
   m_Name: Sound
   m_TagString: Untagged
@@ -9949,6 +9968,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1019590068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019590063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c03d0c7da4c4b509eb643aee34d9e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button: {fileID: 1019590067}
+  Speed: 2
+  Increase_Scale: 5
 --- !u!1 &1020541293
 GameObject:
   m_ObjectHideFlags: 0
@@ -13485,7 +13519,6 @@ GameObject:
   - component: {fileID: 1360968904}
   - component: {fileID: 1360968906}
   - component: {fileID: 1360968907}
-  - component: {fileID: 1360968908}
   m_Layer: 5
   m_Name: Setting_btn
   m_TagString: Untagged
@@ -13630,21 +13663,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1360968908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1360968902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c03d0c7da4c4b509eb643aee34d9e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Button: {fileID: 1360968907}
-  Speed: 2
-  Increase_Scale: 5
 --- !u!1001 &1364389629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21745,6 +21763,7 @@ GameObject:
   - component: {fileID: 1904579460}
   - component: {fileID: 1904579459}
   - component: {fileID: 1904579461}
+  - component: {fileID: 1904579462}
   m_Layer: 5
   m_Name: Music
   m_TagString: Untagged
@@ -21853,6 +21872,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1904579462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904579457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c03d0c7da4c4b509eb643aee34d9e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button: {fileID: 1904579461}
+  Speed: 2
+  Increase_Scale: 5
 --- !u!1001 &1921114878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22684,6 +22718,7 @@ GameObject:
   - component: {fileID: 2026278286}
   - component: {fileID: 2026278288}
   - component: {fileID: 2026278287}
+  - component: {fileID: 2026278289}
   m_Layer: 0
   m_Name: DarkStar_3
   m_TagString: Untagged
@@ -22748,6 +22783,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026278285}
   m_CullTransparentMesh: 1
+--- !u!114 &2026278289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026278285}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b56a6610e234db6aa50d530eb97330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DarkStar: {fileID: 2026278287}
+  GoldenStar: {fileID: 1562022332}
+  lerpSpeed: 2
 --- !u!1001 &2031240822
 PrefabInstance:
   m_ObjectHideFlags: 0
