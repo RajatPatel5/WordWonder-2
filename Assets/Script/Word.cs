@@ -28,6 +28,7 @@ public class Word : MonoBehaviour
     public GameObject Glow;
     public float Count;
     public Timer Script_Timer;
+    public StarAnimation StarAnimation_Script;
 
 
 
@@ -68,6 +69,7 @@ public class Word : MonoBehaviour
         {
             Script_Timer.enabled = false;
             UiManager.instance.OpenPopUp(GamePopUp.Win);
+            StarAnimation_Script.enabled = true;
         }
     }
 
