@@ -14792,7 +14792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Button: {fileID: 1411095969}
   Speed: 2
-  Increase_Scale: 5
+  Increase_Scale: 3
 --- !u!1001 &1415939978
 PrefabInstance:
   m_ObjectHideFlags: 0
