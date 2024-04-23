@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
 using JetBrains.Annotations;
+using System.Collections;
 
 public class Word : MonoBehaviour
 {
@@ -68,31 +69,40 @@ public class Word : MonoBehaviour
 
     private void Update()
     {
-        if(Count == 3)
+        if (Count == 3)
         {
             Script_Timer.enabled = false;
             UiManager.instance.OpenPopUp(GamePopUp.Win);
-            if(Script_Timer.Time_remaining >= 30 && Script_Timer.Time_remaining <= 59)
+            if (Script_Timer.Time_remaining >= 30 && Script_Timer.Time_remaining <= 59)
             {
                 StarAnimation_Script_1.enabled = true;
-               
-                StarAnimation_Script_2.enabled = true;
-               
-                StarAnimation_Script_3.enabled = true;
+                StartCoroutine(EnableStar2(1)); 
+                StartCoroutine(EnableStar3(2));
             }
             else if (Script_Timer.Time_remaining >= 15 && Script_Timer.Time_remaining <= 29)
             {
                 StarAnimation_Script_1.enabled = true;
-              
-                StarAnimation_Script_2.enabled = true;
+                StartCoroutine(EnableStar2(1)); 
             }
             else
             {
                 StarAnimation_Script_1.enabled = true;
-
             }
         }
     }
+
+    IEnumerator EnableStar2(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        StarAnimation_Script_2.enabled = true;
+    }
+
+    IEnumerator EnableStar3(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        StarAnimation_Script_3.enabled = true;
+    }
+
 
     void OnButtonClick(Button button)
     {
