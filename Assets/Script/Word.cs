@@ -33,6 +33,10 @@ public class Word : MonoBehaviour
     public StarAnimation StarAnimation_Script_2;
     public StarAnimation StarAnimation_Script_3;
 
+    public GameObject GoldenStar_1;
+    public GameObject GoldenStar_2;
+    public GameObject GodlenStar_3;
+
 
 
     void Start()
@@ -75,12 +79,14 @@ public class Word : MonoBehaviour
             UiManager.instance.OpenPopUp(GamePopUp.Win);
             if (Script_Timer.Time_remaining >= 30 && Script_Timer.Time_remaining <= 59)
             {
+                GoldenStar_1.SetActive(true);
                 StarAnimation_Script_1.enabled = true;
                 StartCoroutine(EnableStar2(1)); 
                 StartCoroutine(EnableStar3(2));
             }
             else if (Script_Timer.Time_remaining >= 15 && Script_Timer.Time_remaining <= 29)
             {
+                GoldenStar_1.SetActive(true);
                 StarAnimation_Script_1.enabled = true;
                 StartCoroutine(EnableStar2(1)); 
             }
@@ -92,14 +98,16 @@ public class Word : MonoBehaviour
     }
 
     IEnumerator EnableStar2(float delay)
-    {
+    {    
         yield return new WaitForSeconds(delay);
+        GoldenStar_2.SetActive(true);
         StarAnimation_Script_2.enabled = true;
     }
 
     IEnumerator EnableStar3(float delay)
     {
         yield return new WaitForSeconds(delay);
+        GodlenStar_3.SetActive(true);
         StarAnimation_Script_3.enabled = true;
     }
 
