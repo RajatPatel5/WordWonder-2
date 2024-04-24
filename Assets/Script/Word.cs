@@ -92,6 +92,7 @@ public class Word : MonoBehaviour
             }
             else
             {
+                GoldenStar_1.SetActive(true);
                 StarAnimation_Script_1.enabled = true;
             }
         }
