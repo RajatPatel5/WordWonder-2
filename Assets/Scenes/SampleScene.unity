@@ -8044,6 +8044,9 @@ MonoBehaviour:
   GoldenStar_1: {fileID: 1230135888}
   GoldenStar_2: {fileID: 491040610}
   GodlenStar_3: {fileID: 75790472}
+  Roatateto180: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  Rotateto0: {x: 0, y: 0, z: 0, w: 1}
+  Speed_Lerph: 2
 --- !u!1 &762308422
 GameObject:
   m_ObjectHideFlags: 0
@@ -13772,7 +13775,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0255625, y: 0.82333887}
   m_AnchorMax: {x: 0.097166665, y: 0.9483993}
-  m_AnchoredPosition: {x: 15.500122, y: -23}
+  m_AnchoredPosition: {x: 15.500244, y: -23}
   m_SizeDelta: {x: 21.200012, y: 44.48999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1360968904

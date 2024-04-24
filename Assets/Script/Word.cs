@@ -37,8 +37,10 @@ public class Word : MonoBehaviour
     public GameObject GoldenStar_2;
     public GameObject GodlenStar_3;
 
-
-
+    public Quaternion Roatateto180 = Quaternion.Euler(0, 180, 0);
+   // public Quaternion Rotateto0 = Quaternion.Euler(0, 360, 0);
+    public Quaternion Rotateto360 = Quaternion.Euler(0, 0, 0);
+    public float Speed_Lerph;
     void Start()
     {
         
@@ -57,6 +59,7 @@ public class Word : MonoBehaviour
         Rock_1.text = randomList[0];
         Rock_2.text = randomList[1];
         Rock_3.text = randomList[2];
+
 
         foreach (Transform child in transform)
         {
@@ -83,17 +86,29 @@ public class Word : MonoBehaviour
                 StarAnimation_Script_1.enabled = true;
                 StartCoroutine(EnableStar2(1)); 
                 StartCoroutine(EnableStar3(2));
+
+                //rotate stars
+                StartCoroutine(RotateStarto180_For3Star(2.5f));
+              
+               
+                
+
+
             }
             else if (Script_Timer.Time_remaining >= 15 && Script_Timer.Time_remaining <= 29)
             {
                 GoldenStar_1.SetActive(true);
                 StarAnimation_Script_1.enabled = true;
-                StartCoroutine(EnableStar2(1)); 
+                StartCoroutine(EnableStar2(1));
+
+                StartCoroutine(RotateStartto180_for2star(2f));
             }
             else
             {
                 GoldenStar_1.SetActive(true);
                 StarAnimation_Script_1.enabled = true;
+
+                StartCoroutine(RotateStartto180_for1star(1));
             }
         }
     }
@@ -110,6 +125,28 @@ public class Word : MonoBehaviour
         yield return new WaitForSeconds(delay);
         GodlenStar_3.SetActive(true);
         StarAnimation_Script_3.enabled = true;
+    }
+
+    IEnumerator RotateStarto180_For3Star(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        GoldenStar_1.transform.rotation = Quaternion.Lerp(GoldenStar_1.transform.rotation, Roatateto180, Speed_Lerph * Time.deltaTime);
+        GoldenStar_2.transform.rotation = Quaternion.Lerp(GoldenStar_2.transform.rotation, Roatateto180, Speed_Lerph * Time.deltaTime);
+        GodlenStar_3.transform.rotation = Quaternion.Lerp(GodlenStar_3.transform.rotation, Roatateto180, Speed_Lerph * Time.deltaTime);
+    }
+
+    IEnumerator RotateStartto180_for2star(float delay)
+
+    {
+        yield return new WaitForSeconds(delay);
+        GoldenStar_1.transform.rotation = Quaternion.Lerp(GoldenStar_1.transform.rotation, Roatateto180, Speed_Lerph * Time.deltaTime);
+        GoldenStar_2.transform.rotation = Quaternion.Lerp(GoldenStar_2.transform.rotation, Roatateto180, Speed_Lerph * Time.deltaTime);
+    }
+
+    IEnumerator RotateStartto180_for1star(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        GoldenStar_1.transform.rotation = Quaternion.Lerp(GoldenStar_1.transform.rotation, Roatateto180, Speed_Lerph * Time.deltaTime);
     }
 
 
