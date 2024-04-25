@@ -38,8 +38,6 @@ public class Word : MonoBehaviour
     public GameObject GodlenStar_3;
 
     public Quaternion Roatateto180 = Quaternion.Euler(0, 180, 0);
-   // public Quaternion Rotateto0 = Quaternion.Euler(0, 360, 0);
-    public Quaternion Rotateto360 = Quaternion.Euler(0, 0, 0);
     public float Speed_Lerph;
     void Start()
     {
@@ -51,6 +49,10 @@ public class Word : MonoBehaviour
         wordLists.Add(new List<string>() { "jAPAN", "uSA", "uK" });
         wordLists.Add(new List<string>() { "mANGO", "gRAPES", "aPPLE" });
         wordLists.Add(new List<string>() { "rAJKOT", "jAIPUR", "sURAT" });
+        wordLists.Add(new List<string>() { "gOA", "gUJARAT", "pUNJAB" });
+        wordLists.Add(new List<string>() { "yUDIZ", "tATA", "wIPRO" });
+        wordLists.Add(new List<string>() { "uNITY", "uNREAL", "cRYENGINE" });
+
 
         int randomIndex = Random.Range(0, wordLists.Count);
         List<string> randomList = wordLists[randomIndex];
@@ -59,6 +61,7 @@ public class Word : MonoBehaviour
         Rock_1.text = randomList[0];
         Rock_2.text = randomList[1];
         Rock_3.text = randomList[2];
+
 
 
         foreach (Transform child in transform)
@@ -396,6 +399,12 @@ public class Word : MonoBehaviour
                 return "Fruit";
             case 4:
                 return "City";
+            case 5:
+                return "State";
+            case 6:
+                return "Company";
+            case 7:
+                return "Game Engine";
             default:
                 return "Unknown";
         }
