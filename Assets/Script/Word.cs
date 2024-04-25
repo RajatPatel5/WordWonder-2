@@ -80,7 +80,7 @@ public class Word : MonoBehaviour
         {
             Script_Timer.enabled = false;
             UiManager.instance.OpenPopUp(GamePopUp.Win);
-            if (Script_Timer.Time_remaining >= 30 && Script_Timer.Time_remaining <= 59)
+            if (Script_Timer.Time_remaining >= 30 && Script_Timer.Time_remaining <= 60)
             {
                 GoldenStar_1.SetActive(true);
                 StarAnimation_Script_1.enabled = true;
@@ -95,7 +95,7 @@ public class Word : MonoBehaviour
 
 
             }
-            else if (Script_Timer.Time_remaining >= 15 && Script_Timer.Time_remaining <= 29)
+            else if (Script_Timer.Time_remaining >= 15 && Script_Timer.Time_remaining < 30)
             {
                 GoldenStar_1.SetActive(true);
                 StarAnimation_Script_1.enabled = true;
